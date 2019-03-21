@@ -1,0 +1,8 @@
+from django import forms
+
+from .models import Post
+
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ('title', 'customer','pro','goals','problems','connection','yearly_work_plan','cost_and_prodactivity')
