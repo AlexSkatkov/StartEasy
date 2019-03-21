@@ -15,7 +15,8 @@ def home(request):
     if request.user.is_authenticated:
         context = {
             #'posts': Post.objects.all()
-            'posts': Post.objects.filter(author=request.user)  #  a query that gets all the the posts from the database(video5)
+            'posts': Post.objects.filter(author=request.user) | Post.objects.filter(user1=request.user.username) | Post.objects.filter(user2=request.user.username) |
+                     Post.objects.filter(user3=request.user.username) | Post.objects.filter(user4=request.user.username)#  a query that gets all the the posts from the database(video5)
         }
 
         return render(request, 'project/home.html', context)
@@ -48,7 +49,7 @@ def about(request):
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('success')
-    return render(request, 'blog/about.html', {'form': form})
+    return render(request, 'blog/About.html', {'form': form})
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
