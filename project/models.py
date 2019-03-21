@@ -18,6 +18,7 @@ class Post(models.Model):                                             # class th
     user2 = models.TextField(blank=True)
     user3 = models.TextField(blank=True)
     user4 = models.TextField(blank=True)
+    client = models.TextField(blank=True)
 
     def __str__(self):
         return self.title

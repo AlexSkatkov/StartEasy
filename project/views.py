@@ -16,7 +16,8 @@ def home(request):
         context = {
             #'posts': Post.objects.all()
             'posts': Post.objects.filter(author=request.user) | Post.objects.filter(user1=request.user.username) | Post.objects.filter(user2=request.user.username) |
-                     Post.objects.filter(user3=request.user.username) | Post.objects.filter(user4=request.user.username)#  a query that gets all the the posts from the database(video5)
+                     Post.objects.filter(user3=request.user.username) | Post.objects.filter(user4=request.user.username) | Post.objects.filter(client=request.user.username)
+            #  a query that gets all the the posts from the database(video5)
         }
 
         return render(request, 'project/home.html', context)
@@ -57,14 +58,26 @@ def post_detail(request, pk):
 
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    if request.method == "POST":
-        form = PostForm(request.POST, instance=post)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.published_date = timezone.now()
-            post.save()
-            return redirect('post_detail', pk=post.pk)
+    if (request.user.username != str(post.author)):
+        if request.method == "POST":
+            form = PostForm(request.POST, instance=post)
+            if form.is_valid():
+                post = form.save(commit=False)
+                post.author = request.user
+                post.published_date = timezone.now()
+                post.save()
+                return redirect('post_detail', pk=post.pk)
+        else:
+            form = PostForm(instance=post)
     else:
-        form = PostForm(instance=post)
+        if request.method == "POST":
+            form = PostForm2(request.POST, instance=post)
+            if form.is_valid():
+                post = form.save(commit=False)
+                post.author = request.user
+                post.published_date = timezone.now()
+                post.save()
+                return redirect('post_detail', pk=post.pk)
+        else:
+            form = PostForm2(instance=post)
     return render(request, 'project/post_edit.html', {'form': form})

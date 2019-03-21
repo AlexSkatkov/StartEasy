@@ -8,7 +8,7 @@
             </div>
         {% endif %}
         <h2>{{ post.title }}</h2>
-        <p>{{ post.content|linebreaksbr }}</p>
+        <p>{{ post.customer|linebreaksbr }}</p>
         {% if user.is_authenticated %}
         <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">edit</a>
         {% endif %}
