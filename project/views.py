@@ -12,10 +12,14 @@ from django.utils import timezone
 
 
 def home(request):
-    context = {
-        'posts': Post.objects.all()                      # a query that gets all the the posts from the database(video5)
-    }
-    return render(request, 'project/home.html', context)
+    if request.user.is_authenticated:
+        context = {
+            #'posts': Post.objects.all()
+            'posts': Post.objects.filter(author=request.user)  #  a query that gets all the the posts from the database(video5)
+        }
+
+        return render(request, 'project/home.html', context)
+    return redirect('login')
 
 def post_new(request):
     if request.method == "POST":
