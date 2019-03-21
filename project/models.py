@@ -14,7 +14,10 @@ class Post(models.Model):                                             # class th
     cost_and_prodactivity = models.TextField(blank=True)
     date_posted = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)        # every post has 1 author and author can have many posts
-                                                                      # if we delete a user his posts are deleted too
+    user1 = models.TextField(blank=True)
+    user2 = models.TextField(blank=True)
+    user3 = models.TextField(blank=True)
+    user4 = models.TextField(blank=True)
 
     def __str__(self):
         return self.title

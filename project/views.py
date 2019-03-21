@@ -4,7 +4,7 @@ from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect,get_object_or_404
 from users.forms import ContactForm
-from .forms import PostForm
+from .forms import PostForm,PostForm2
 from django.shortcuts import redirect
 from django.utils import timezone
 
@@ -23,7 +23,7 @@ def home(request):
 
 def post_new(request):
     if request.method == "POST":
-        form = PostForm(request.POST)
+        form = PostForm2(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
@@ -31,7 +31,7 @@ def post_new(request):
             post.save()
             return redirect('post_detail', pk=post.pk)
     else:
-        form = PostForm()
+        form = PostForm2()
     return render(request, 'project/post_edit.html', {'form': form})
 
 def about(request):
