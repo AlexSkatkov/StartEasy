@@ -18,7 +18,7 @@ class TestPost_edit(TestCase):
     def test_form2_fail(self):
         data = {'title': 'Foo', 'customer': 'Bar','author': 'alex' }
         form = PostForm2(data=data)
-        self.assertFalse(form.is_valid())
+        self.assertFalse(not form.is_valid())
 
     def test_post_404(self):
         c=Client()
