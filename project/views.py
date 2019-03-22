@@ -23,6 +23,7 @@ def home(request):
         return render(request, 'project/home.html', context)
     return redirect('login')
 
+
 def post_new(request):
     if request.method == "POST":
         form = PostForm2(request.POST)
@@ -50,11 +51,13 @@ def about(request):
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('success')
-    return render(request, 'blog/About.html', {'form': form})
+    return render(request, 'project/About.html', {'form': form})
+
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'project/post_detail.html', {'post': post})
+
 
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
