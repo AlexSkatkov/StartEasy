@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'django_jenkins',
     'users.apps.UsersConfig',
     'project.apps.ProjectConfig',
     'crispy_forms',
@@ -41,6 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+JENKINS_TASKS = (
+    'django_jenkins.tasks.run_pep8',
+    'django_jenkins.tasks.run_pyflakes',
+)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
