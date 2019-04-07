@@ -12,7 +12,6 @@ docutils==0.14
 idna==2.8
 jmespath==0.9.4
 pep8==1.7.1
-PyAutoGUI==0.9.38
 pyflakes==2.1.1
 PyMsgBox==1.0.6
 pyparsing==2.3.1
