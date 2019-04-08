@@ -2,4 +2,10 @@
 {% load crispy_forms_tags %}
 {% block content %}
     <h1>{{ user.username }}</h1>
+    <form action="{% url upload_pic %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+    <p>
+        <input id="id_image" type="file" class="" name="image">
+    </p>
+    <input type="submit" value="Submit" />
+</form>
 {% endblock content %}

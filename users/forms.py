@@ -9,6 +9,9 @@ class ContactForm(forms.Form):
     subject = forms.CharField(required=True)
     message = forms.CharField(widget=forms.Textarea, required=True)
 
+class ProfileForm(forms.Form):
+    image= forms.ImageField()
+
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
