@@ -7,6 +7,7 @@ from users.forms import ContactForm
 from .forms import PostForm,PostForm2
 from django.shortcuts import redirect
 from django.utils import timezone
+from django.contrib import messages
 
 # we send the user to the suitable template to view the page with a title
 
@@ -84,3 +85,17 @@ def post_edit(request, pk):
         else:
             form = PostForm2(instance=post)
     return render(request, 'project/post_edit.html', {'form': form})
+
+def post_delete(request,pk):
+        post = get_object_or_404(Post, pk=pk)
+        creator = post.author
+        if request.user.is_authenticated and (request.user.username == str(creator)):
+            post.delete()
+            messages.success(request, "Post successfully deleted!")
+            #return HttpResponseRedirect('project/home.html')
+            return render(request, 'project/home.html')
+        context = {'post': post,
+                   'creator': creator,
+                   }
+        messages.error(request, "Post cannot be deleted by you")
+        return render(request, 'project/home.html')
