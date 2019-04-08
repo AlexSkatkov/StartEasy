@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django_jenkins',
+    #'django_jenkins',
     'users.apps.UsersConfig',
     'project.apps.ProjectConfig',
     'crispy_forms',
