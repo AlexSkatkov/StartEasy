@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 
 class Post(models.Model):                                             # class that will represent our database
     title = models.CharField(max_length=100)
+    deadline=models.TextField(blank=True)
     customer = models.TextField(blank=True)
     pro = models.TextField(blank=True)
     goals = models.TextField(blank=True)

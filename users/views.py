@@ -1,9 +1,9 @@
-
+from .models import ProfileModel
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm,ProfileForm
 from django.shortcuts import render, redirect
-
+from django.http import HttpResponse, HttpResponseForbidden
 # Create your views here.
 
 
@@ -22,3 +22,13 @@ def register(request):
 @login_required                                               # user must be logged in to view this page!
 def profile(request):
     return render(request, 'users/profile.html')
+
+def upload_pic(request,pk):
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            m = ProfileModel.objects.get(pk=pk)
+            m.model_pic = form.cleaned_data['image']
+            m.save()
+            return HttpResponse('image upload success')
+    return HttpResponseForbidden('allowed only via POST')
