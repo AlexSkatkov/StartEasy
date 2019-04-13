@@ -14,7 +14,7 @@ class Post(models.Model):                                             # class th
     yearly_work_plan = models.TextField(blank=True)
     cost_and_prodactivity = models.TextField(blank=True)
     date_posted = models.DateTimeField(default=timezone.now)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)        # every post has 1 author and author can have many posts
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='+')        # every post has 1 author and author can have many posts
     user1 = models.TextField(blank=True)
     user2 = models.TextField(blank=True)
     user3 = models.TextField(blank=True)

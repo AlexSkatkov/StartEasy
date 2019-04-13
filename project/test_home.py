@@ -5,9 +5,6 @@ from django.test.client import Client
 
 
 class TestHome(TestCase):
-    def test_home(self):
-        found = resolve('/')
-        self.assertEquals(found.func,home)
 
     def test_redirect(self):
         c = Client()
