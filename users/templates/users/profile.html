@@ -3,7 +3,7 @@
 {% block content %}
     <div class="content-section">
       <div class="media">
-        <img class="rounded-circle account-img" src="{{ user.profile.image.url|default:"https://www.patiliyo.com/wp-content/uploads/2016/05/guzel-kopek-fotograflari-patiliyo-8.jpg"}}">
+        <img class="rounded-circle account-img" src="{{ user.profile.image|default:"https://www.patiliyo.com/wp-content/uploads/2016/05/guzel-kopek-fotograflari-patiliyo-8.jpg"}}">
         <div class="media-body">
           <h2 class="account-heading">{{ user.username }}</h2>
           <p class="text-secondary">{{ user.email }}</p>
