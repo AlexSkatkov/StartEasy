@@ -2,6 +2,7 @@
 {% load crispy_forms_tags %}
 {% block content %}
     <h2>Edit post</h2>
+    <a href="{% url 'help' %}">help</a>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form|crispy }}
         <button type="submit" class="save btn btn-default">Save</button>

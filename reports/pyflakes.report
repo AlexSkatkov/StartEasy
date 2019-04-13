@@ -1,0 +1,25 @@
+users\admin.py:1: [E] PYFLAKES:'django.contrib.admin' imported but unused
+users\forms.py:4: [E] PYFLAKES:redefinition of unused 'forms' from line 1
+users\models.py:1: [E] PYFLAKES:'django.db.models' imported but unused
+users\tests.py:3: [E] PYFLAKES:'from .forms import *' used; unable to detect undefined names
+users\tests.py:30: [E] PYFLAKES:'UserRegisterForm' may be undefined, or defined from star imports: [E] PYFLAKES:.forms
+users\tests.py:35: [E] PYFLAKES:'UserRegisterForm' may be undefined, or defined from star imports: [E] PYFLAKES:.forms
+users\views.py:15: [E] PYFLAKES:local variable 'username' is assigned to but never used
+project\tests.py:1: [E] PYFLAKES:'django.test.TestCase' imported but unused
+project\test_home.py:2: [E] PYFLAKES:'django.urls.reverse' imported but unused
+project\test_post_edit.py:5: [E] PYFLAKES:'.models.Post' imported but unused
+project\views.py:4: [E] PYFLAKES:'django.http.HttpResponseRedirect' imported but unused
+project\views.py:5: [E] PYFLAKES:redefinition of unused 'render' from line 1
+project\views.py:8: [E] PYFLAKES:redefinition of unused 'redirect' from line 5
+..\StartEasy\venv\lib\site-packages\crispy_forms\compatibility.py:4: [E] PYFLAKES:undefined name 'basestring'
+..\StartEasy\venv\lib\site-packages\crispy_forms\compatibility.py:15: [E] PYFLAKES:undefined name 'unicode'
+..\StartEasy\venv\lib\site-packages\crispy_forms\compatibility.py:18: [E] PYFLAKES:undefined name 'long'
+..\StartEasy\venv\lib\site-packages\crispy_forms\templatetags\crispy_forms_field.py:146: [E] PYFLAKES:use ==/!= to compare str, bytes, and int literals
+..\StartEasy\venv\lib\site-packages\crispy_forms\templatetags\crispy_forms_tags.py:15: [E] PYFLAKES:'from crispy_forms.templatetags.crispy_forms_filters import *' used; unable to detect undefined names
+..\StartEasy\venv\lib\site-packages\crispy_forms\templatetags\crispy_forms_tags.py:15: [E] PYFLAKES:'crispy_forms.templatetags.crispy_forms_filters.*' imported but unused
+..\StartEasy\venv\lib\site-packages\crispy_forms\tests\test_form_helper.py:585: [E] PYFLAKES:redefinition of unused 'test_bootstrap_form_show_errors' from line 557
+..\StartEasy\venv\lib\site-packages\crispy_forms\tests\test_form_helper.py:689: [E] PYFLAKES:redefinition of unused 'test_error_and_help_inline' from line 659
+..\StartEasy\venv\lib\site-packages\django\contrib\messages\__init__.py:1: [E] PYFLAKES:'from django.contrib.messages.api import *' used; unable to detect undefined names
+..\StartEasy\venv\lib\site-packages\django\contrib\messages\__init__.py:1: [E] PYFLAKES:'django.contrib.messages.api.*' imported but unused
+..\StartEasy\venv\lib\site-packages\django\contrib\messages\__init__.py:2: [E] PYFLAKES:'from django.contrib.messages.constants import *' used; unable to detect undefined names
+..\StartEasy\venv\lib\site-packages\django\contrib\messages\__init__.py:2: [E] PYFLAKES:'django.contrib.messages.constants.*' imported but unused

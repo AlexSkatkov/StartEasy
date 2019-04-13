@@ -70,6 +70,8 @@ def about(request):
             return redirect('success')
     return render(request, 'project/About.html', {'form': form})
 
+def help(request):
+    return render(request, 'project/help.html')
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
