@@ -10,6 +10,22 @@ from django.utils import timezone
 from django.contrib import messages
 
 # we send the user to the suitable template to view the page with a title
+from django_xhtml2pdf.utils import generate_pdf
+
+from PyPDF2 import PdfFileMerger
+
+from books.models import Book
+
+class BookIndexTemplateView(TemplateView):
+    template_name = 'book_index.html'
+
+    def books_plain_old_view(request):
+     resp = HttpResponse(content_type='application/pdf')
+     context = {
+         'books': Book.objects.all()
+     }
+     result = generate_pdf('books_plain_old_view.html', file_object=resp, context=context)
+     return result
 
 
 def home(request):
