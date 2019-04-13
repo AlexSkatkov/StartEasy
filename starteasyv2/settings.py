@@ -10,11 +10,18 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import os
+import os, sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+#'/home/user/example/parent/child'
+current_path = os.path.abspath('.')
 
+#'/home/user/example/parent'
+parent_path = os.path.dirname(current_path)
+
+sys.path.append(parent_path)
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'child.settings')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
