@@ -36,7 +36,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# test
 INSTALLED_APPS = [
     'django_jenkins',
     'users.apps.UsersConfig',
