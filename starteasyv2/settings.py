@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import os, sys
+import os, sys,django
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -19,6 +19,10 @@ current_path = os.path.abspath('.')
 
 #'/home/user/example/parent'
 parent_path = os.path.dirname(current_path)
+
+sys.path.append("/app/")
+sys.path.append("/app/StartEasy/")
+sys.path.append("/app/StartEasy/settings/")
 
 sys.path.append(parent_path)
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'child.settings')
