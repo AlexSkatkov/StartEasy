@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'StartEasy',
+    'Profile',
 ]
 
 JENKINS_TASKS = (
