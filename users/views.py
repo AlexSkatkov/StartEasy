@@ -4,22 +4,22 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm,ProfileUpdateForm,UserUpdateForm
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseForbidden
-# Create your views here.
+
 
 
 def register(request):
     if request.method == 'POST':
-        form = UserRegisterForm(request.POST)                 # here we creating a form and save the data we entered
+        form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Your account has been created! You may log in ')
-            return redirect('login')                        # after we submit the form we will go back to home page
+            return redirect('login')
     else:
-        form = UserRegisterForm()                             # if its not a valid post request we create a blank form
+        form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
 
-@login_required                                               # user must be logged in to view this page!
+@login_required
 def profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
