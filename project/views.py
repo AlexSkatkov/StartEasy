@@ -112,3 +112,6 @@ def post_delete(request,pk):
                    }
         messages.error(request, "Post cannot be deleted by you")
         return render(request, 'project/home.html')
+
+def examples(request):
+    return render(request, 'project/examples.html')
