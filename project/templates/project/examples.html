@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'project/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
 
-</body>
-</html>
+<h1>examples</h1>
+<a href="http://www.methodacloud.com/Content/MethodC/Study/h_init_sdoc01.pdf">template</a>
+<br>
+<a href="https://www.pmteam.co.il/light-rail-project">example 1</a>
+<br>
+<a href="https://marketing.johnbryce.co.il/files/system-analysis/פרוייקט_עגלה_חכמה.pdf">example 2</a>
+<br>
+<a href="https://marketing.johnbryce.co.il/files/system-analysis/תיק%20ייזום-מערכת_סיורים.PDF">example 3</a>
+<br>
+<a href="https://marketing.johnbryce.co.il/files/system-analysis/תיק_ייזום_Coach4u.pdf">example 4</a>
+{% endblock %}
