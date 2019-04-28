@@ -49,6 +49,9 @@ def post_new(request):
         form = PostForm2()
     return render(request, 'project/post_edit.html', {'form': form})
 
+def tips(request):
+    return render(request, 'project/tips.html')
+
 def about(request):
     if request.method == 'GET':
         form = ContactForm()
