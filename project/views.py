@@ -4,7 +4,7 @@ from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect,get_object_or_404
 from users.forms import ContactForm
-from .forms import PostForm,PostForm2
+from .forms import PostForm,PostForm2, CommentForm
 from django.shortcuts import redirect
 from django.utils import timezone
 from django.contrib import messages
@@ -118,3 +118,17 @@ def post_delete(request,pk):
 
 def examples(request):
     return render(request, 'project/examples.html')
+
+
+def add_comment_to_post(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = CommentForm()
+    return render(request, 'project/add_comment_to_post.html', {'form': form})

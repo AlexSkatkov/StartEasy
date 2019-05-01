@@ -12,6 +12,7 @@ urlpatterns = [
     path('pdf/', views.pdf, name='pdf'),
     path('about/', views.about, name='project-about'),
     path('tips/', views.tips, name='project-tips'),
-    path('examples/', views.examples, name='project-examples')
+    path('examples/', views.examples, name='project-examples'),
+    path('post/<int:pk>/comment/', views.add_comment_to_post, name='add_comment_to_post'),
 
 ]
