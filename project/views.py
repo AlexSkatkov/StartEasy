@@ -52,6 +52,9 @@ def post_new(request):
 def tips(request):
     return render(request, 'project/tips.html')
 
+def QA(request):
+    return render(request, 'project/QA.html')
+
 def about(request):
     if request.method == 'GET':
         form = ContactForm()
