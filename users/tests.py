@@ -1,7 +1,7 @@
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
 from .forms import *
-from locust import HttpLocust, TaskSet, task
+
 
 
 
