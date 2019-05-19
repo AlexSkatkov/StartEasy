@@ -24,6 +24,7 @@ sys.path.append("/app/")
 sys.path.append("/app/StartEasy/")
 sys.path.append("/app/StartEasy/settings/")
 
+
 sys.path.append(parent_path)
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'child.settings')
 
@@ -53,7 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'StartEasy',
-    'selenium',
+
 ]
 
 JENKINS_TASKS = (
