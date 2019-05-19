@@ -1,9 +1,9 @@
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
 from .forms import *
-from django.contrib.staticfiles.testing import LiveServerTestCase
-from selenium.webdriver.firefox.webdriver import WebDriver
-import time
+
+
+
 
 # Create your tests here.
 
@@ -65,33 +65,6 @@ class TestProfile(TestCase):
         c=Client()
         response=c.post('post_detail')
         self.assertEqual(response.status_code, 404)
-
-
-#integration testing
-
-
-class MySeleniumTests(LiveServerTestCase):
-    @classmethod
-    def setUpClass(cls):
-        super(MySeleniumTests, cls).setUpClass()
-        cls.selenium = WebDriver()
-
-    @classmethod
-    def tearDownClass(cls):
-        cls.selenium.quit()
-        super(MySeleniumTests, cls).tearDownClass()
-
-    def test_login(self):
-        self.selenium.get('%s%s' % (self.live_server_url, '/login/'))
-        username_input = self.selenium.find_element_by_name("username")
-        username_input.send_keys('alex')
-        password_input = self.selenium.find_element_by_name("password")
-        password_input.send_keys('12grbd732a')
-        time.sleep(2);
-        #self.selenium.find_element_by_xpath('//div[@id="submit"]').click()
-
-
-
 
 
 

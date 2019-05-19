@@ -23,4 +23,3 @@ tinycss2
 WeasyPrint
 webencodings
 xhtml2pdf
-selenium
