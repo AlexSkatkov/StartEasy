@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="star-easy",
+    name="star-easy-web-site",
     version="0.0.1",
     author="olga L",
     author_email="olgala1@ac.sce.ac.il",
