@@ -1,0 +1,8 @@
+six
+unidecode
+
+[tests]
+nose
+yanc
+coverage
+tox

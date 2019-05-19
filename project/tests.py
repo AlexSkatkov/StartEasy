@@ -2,7 +2,8 @@ from django.test import TestCase
 from django.test.client import Client
 from .forms import PostForm2,PostForm
 from users.forms import ContactForm
-
+from django.core.mail import send_mail
+from django.conf import settings
 
 class TestPost_new(TestCase):
 
@@ -75,6 +76,14 @@ class TestAbout(TestCase):
         data = {'from_email': 'Foo@gmail.com', 'subject': 'ofek', 'message': 'alex'}
         form = ContactForm(data=data)
         self.assertTrue(form.is_valid())
+
+    def test_email(self):
+        subject = 'Some subject'
+        from_email = settings.DEFAULT_FROM_EMAIL
+        message = 'This is my test message'
+        recipient_list = ['mytest@gmail.com', 'you@email.com']
+        html_message = '<h1>This is my HTML test</h1>'
+        send_mail(subject, message, from_email, recipient_list, fail_silently=False, html_message=html_message)
 
     def test_redirect_fail(self):
         c = Client()
