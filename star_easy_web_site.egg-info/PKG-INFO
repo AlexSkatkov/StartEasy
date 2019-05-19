@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: star-easy-web-site
+Version: 0.0.1
+Summary: web site
+Home-page: https://github.com/AlexSkatkov/StartEasy
+Author: olga L
+Author-email: olgala1@ac.sce.ac.il
+License: UNKNOWN
+Description: # Example Package
+        
+        project Django
+        [Github](https://github.com/AlexSkatkov/StartEasy)
+        web site
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
