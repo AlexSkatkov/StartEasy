@@ -9,10 +9,11 @@ from django.shortcuts import redirect
 from django.utils import timezone
 from django.contrib import messages
 from django_xhtml2pdf.utils import generate_pdf
-
-# we send the user to the suitable template to view the page with a title
-
+from django.template.loader import get_template
+from django.http import HttpResponse
 from PyPDF2 import PdfFileMerger
+from django.views.generic import View
+from .models import *
 
 
 def pdf(request):

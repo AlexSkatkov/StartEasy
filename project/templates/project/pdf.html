@@ -4,6 +4,72 @@
 </head>
 <body>
     <h1>project</h1>
+    <p>TextApp
+deadline:
+12.3.20
+        <br>
+customer:
+apple
+        <br>
+pro:
+tal,olga,alex,ofek
+        <br>
+goals:
+-get rich
+        <br>
+problems:
+-im not rich
+        <br>
+connection:
+-no one
+        <br>
+yearly_work_plan:
+to lazy
+        <br>
+cost_and_prodactivity:
+to much
+        <br>
+Application:
+<br>
+General_Architecture_Highlights:
+<br>
+Current_situation:
+<br>
+System_character:
+<br>
+Constraints:
+<br>
+Glossary:
+<br>
+External_demarcation:
+<br>
+Internal_demarcation:
+<br>
+User_Interface:
+<br>
+Processes:
+<br>
+Code_tables:
+<br>
+Logical_files:
+<br>
+Dictionary_of_information:
+<br>
+Reports:
+<br>
+Data_Security:
+<br>
+Volumes_loads_and_performance:
+<br>
+Interfaces_and_links:
+<br>
+General_Architecture:
+<br>
+Central_hardware:
+<br>
+Environmental_infrastructure:
+<br>
+Database:</p>
     <h2>{{ post.title }}</h2>
     <p>{{ post.deadline|linebreaksbr }}</p>
     <p>{{ post.customer|linebreaksbr }}</p>
@@ -13,15 +79,5 @@
     <p>{{ post.connection|linebreaksbr }}</p>
     <p>{{ post.yearly_work_plan|linebreaksbr }}</p>
     <p>{{ post.cost_and_prodactivity|linebreaksbr }}</p>
-    <table>
-        <tr>
-            <th>ID</th><th>Title</th>
-        </tr>
-        {% for p in post %}
-            <tr>
-                <td>{{ post.deadline }}</td><td>{{ post.title }}</td>
-            </tr>
-        {% endfor %}
-    </table>
 </body>
 </html>

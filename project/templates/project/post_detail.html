@@ -24,6 +24,48 @@
         <p>{{ post.yearly_work_plan|linebreaksbr }}</p>
         <b>cost_and_prodactivity:</b>
         <p>{{ post.cost_and_prodactivity|linebreaksbr }}</p>
+        <b>Application:</b>
+        <p>{{ post.Application|linebreaksbr }}</p>
+        <b>General_Architecture_Highlights:</b>
+        <p>{{ post.General_Architecture_Highlights|linebreaksbr }}</p>
+        <b>Current_situation:</b>
+        <p>{{ post.Current_situation|linebreaksbr }}</p>
+        <b>System_character:</b>
+        <p>{{ post.System_character|linebreaksbr }}</p>
+        <b>Constraints:</b>
+        <p>{{ post.Constraints|linebreaksbr }}</p>
+        <b>Glossary:</b>
+        <p>{{ post.Glossary|linebreaksbr }}</p>
+        <b>External_demarcation:</b>
+        <p>{{ post.External_demarcation|linebreaksbr }}</p>
+        <b>Internal_demarcation:</b>
+        <p>{{ post.Internal_demarcation|linebreaksbr }}</p>
+        <b>User_Interface:</b>
+        <p>{{ post.User_Interface|linebreaksbr }}</p>
+        <b>Processes:</b>
+        <p>{{ post.Processes|linebreaksbr }}</p>
+        <b>Code_tables:</b>
+        <p>{{ post.Code_tables|linebreaksbr }}</p>
+        <b>Logical_files:</b>
+        <p>{{ post.Logical_files|linebreaksbr }}</p>
+        <b>Dictionary_of_information:</b>
+        <p>{{ post.Dictionary_of_information|linebreaksbr }}</p>
+        <b>Reports:</b>
+        <p>{{ post.Reports|linebreaksbr }}</p>
+        <b>Data_Security:</b>
+        <p>{{ post.Data_Security|linebreaksbr }}</p>
+        <b>Volumes_loads_and_performance:</b>
+        <p>{{ post.Volumes_loads_and_performance|linebreaksbr }}</p>
+        <b>Interfaces_and_links:</b>
+        <p>{{ post.Interfaces_and_links|linebreaksbr }}</p>
+        <b>General_Architecture:</b>
+        <p>{{ post.General_Architecture|linebreaksbr }}</p>
+        <b>Central_hardware:</b>
+        <p>{{ post.Central_hardware|linebreaksbr }}</p>
+        <b>Environmental_infrastructure:</b>
+        <p>{{ post.Environmental_infrastructure|linebreaksbr }}</p>
+        <b>Database:</b>
+        <p>{{ post.Database|linebreaksbr }}</p>
         {% if user.is_authenticated %}
         <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">edit</a>
         {% endif %}
