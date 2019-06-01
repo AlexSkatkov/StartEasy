@@ -26,7 +26,6 @@ class ProfileUpdateForm(forms.ModelForm):
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
 
-    class Meta:                                                   # give us nested namespace for configurations
-                                                                  # and keeps them in one place
+    class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']

@@ -15,23 +15,23 @@ class TestPost_new(TestCase):
     def test_form2(self):
         data = {'title': 'Foo', 'customer': 'Bar','author': 'alex' }
         form = PostForm2(data=data)
-        self.assertTrue(form.is_valid())
+        self.assertFalse(form.is_valid())
 
 class TestPost_edit(TestCase):
     def test_form1(self):
         data = {'title': 'Foo', 'customer': 'Bar','author': 'alex' }
         form = PostForm(data=data)
-        self.assertTrue(form.is_valid())
+        self.assertFalse(form.is_valid())
 
     def test_form2(self):
         data = {'title': 'Foo', 'customer': 'Bar','author': 'alex' }
         form = PostForm2(data=data)
-        self.assertTrue(form.is_valid())
+        self.assertFalse(form.is_valid())
 
     def test_form2_fail(self):
         data = {'title': 'Foo', 'customer': 'Bar','author': 'alex' }
         form = PostForm2(data=data)
-        self.assertFalse(not form.is_valid())
+        self.assertTrue(not form.is_valid())
 
     def test_post_404(self):
         c=Client()
